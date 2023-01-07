@@ -51,17 +51,24 @@ form select, form input {
     margin: 5px;
 }
 
+#legend {
+    align-self: center;
+}
+
 #past {
     background-color: #406E8E;
     color: #CBF7ED;
+
 }
 
 #present {
     background-color: #8EA8C3;
     color: #CBF7ED;
+
 }
 
 #future {
     background-color: #CBF7ED;
     color: #406E8E;
+
 }
