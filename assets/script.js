@@ -11,13 +11,56 @@ $(function (){
 var projectsEl = document.getElementById("listOfProjects")
 var allProjectsString = localStorage.getItem("allProjects")
 var allProjects = JSON.parse(allProjectsString) || [];
-function sortFunction(a, b) {
+
+var dueDateEl = document.getElementById("dateTitleBtn");
+var typeEl = document.getElementById("typeTitleBtn")
+var nameEl = document.getElementById("nameTitleBtn")
+var sortBy = localStorage.getItem("sortBy");
+
+function sortDateFunction(a, b) {
     var c = new Date(a.dDate).getTime();
     var d = new Date(b.dDate).getTime();
     return c > d ? 1 : -1;
 };
 
-allProjects.sort(sortFunction);
+function sortTypeFunction(a, b) {
+    var textA = a.pType.toUpperCase();
+    var textB = b.pType.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+}
+
+function sortNameFunction(a, b) {
+    var textA = a.pName.toUpperCase();
+    var textB = b.pName.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+}
+
+
+dueDateEl.addEventListener("click", function() {
+    sortBy = "sortByDate";
+    localStorage.setItem("sortBy", sortBy)
+    location.reload();
+})
+
+typeEl.addEventListener("click", function() {
+    sortBy = "sortByType";
+    localStorage.setItem("sortBy", sortBy)
+    location.reload();
+})
+
+nameEl.addEventListener("click", function() {
+    sortBy = "sortByName";
+    localStorage.setItem("sortBy", sortBy)
+    location.reload();
+})
+
+if(sortBy === "sortByDate") {
+    allProjects.sort(sortDateFunction);
+} else if(sortBy === "sortByType") {
+    allProjects.sort(sortTypeFunction);
+} else {
+    allProjects.sort(sortNameFunction);
+}
 
 function renderProject(position) {
     var newProject = document.createElement("div")
