@@ -1,0 +1,67 @@
+header {
+    text-align: center;
+    background-color: #580C1F;
+    height: 200px;
+    padding-top: 20px;
+    color: #F7C59F;
+}
+
+#projectHeaders {
+    background-color: #580C1F;
+    color: #F7C59F;
+}
+
+.my-btns, .my-title {
+    background-color: #580C1F;
+    color: #F7C59F;
+    border-radius: 0;
+    font-size: larger;
+}
+
+.my-instructions {
+    border-bottom: solid 1px #8EA8C3;
+    padding: 10px;
+    font-weight: lighter;
+    color: #8EA8C3;
+}
+
+form {
+    color: #8EA8C3;
+}
+
+form select, form input {
+    color: #9c9c9c;
+}
+
+.my-close-btn {
+    background-color: #8EA8C3;
+    color: #dddddd;
+    border-radius: 0;
+    font-size: larger;
+}
+
+.my-projects {
+    border-bottom: solid 1px #580C1F;
+    color: #580C1F;
+    display: flex;
+    align-items: baseline;
+}
+
+.doneBtn {
+    margin: 5px;
+}
+
+#past {
+    background-color: #406E8E;
+    color: #CBF7ED;
+}
+
+#present {
+    background-color: #8EA8C3;
+    color: #CBF7ED;
+}
+
+#future {
+    background-color: #CBF7ED;
+    color: #406E8E;
+}
